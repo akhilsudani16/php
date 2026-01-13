@@ -1,0 +1,22 @@
+{
+    "name": "revaticsdevelopment/demo",
+    "require": {
+        "illuminate/collections": "^12.46"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/",
+            "Tests\\": "tests/"
+
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
