@@ -2,20 +2,21 @@
 
 use Core\App;
 use Core\Database;
+use Core\Session;
 
 $db = App::resolve(Database::class);
 
-$currentUser = 1;
+$currentUserId = Session::get('user')['id'];
+
+$notes = $db->query(
+    'SELECT * FROM notes WHERE user_id = :user_id',
+    [
+        'user_id' => $currentUserId
+    ]
+)->get();
 
 
-
-$notes =  $db -> query('select * from notes where user_id = :currentUser',[
-    'currentUser' => $currentUser
-])->get();
-
-
-
-view("notes/index.view.php" , [
+view('notes/index.view.php', [
     'heading' => 'My Notes',
-    'notes' => $notes
+    'notes'   => $notes
 ]);
