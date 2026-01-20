@@ -11,8 +11,6 @@ session_start();
 
 require BASE_PATH . 'Core/function.php';
 
-
-
 require base_path('bootstrap.php');
 
 
@@ -32,6 +30,5 @@ try {
 
     return redirect($router->previousUrl());
 }
-
 
 Session::unflash();

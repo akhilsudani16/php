@@ -16,8 +16,12 @@ use Http\Forms\LoginForm;
     if(! $signedIn)
     {
         $form -> error(
-            'email' , 'No Matching Account Found For That E-mail Address and  password'
+            'email' , 'No Matching Account Found For That E-mail Address and password'
         )->throw();
+    }
+
+    if ($signedIn) {
+
     }
 
     redirect('/');

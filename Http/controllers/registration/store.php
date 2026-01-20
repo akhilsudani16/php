@@ -16,8 +16,8 @@ $errors = [];
         $errors['email'] = 'Please enter a valid email address';
     }
 
-    if(! Validator::string($password,7, 255) ){
-        $errors['password'] = 'Please enter at least 7 characters';
+    if(! Validator::string($password,8, 255) ){
+        $errors['password'] = 'Please enter at least 8 characters';
     }
 
     if(! empty($errors)){
@@ -41,7 +41,6 @@ $errors = [];
             'email' => $email,
             'password' => password_hash($password, PASSWORD_BCRYPT)
         ]);
-
 
         login($user);
 

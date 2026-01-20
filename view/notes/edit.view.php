@@ -8,35 +8,21 @@
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 ">
 
             <form method="POST" action="/note">
-                <input type="hidden" name="_method" value="PATCH">
-                <input type="hidden" name="id" value="<?php echo $note['id'] ?>">
+
                 <div class="col-span-full">
                     <label for="body" class="block text-sm/6 font-medium text-white">Body</label>
                     <div class="mt-2">
-                                        <textarea id="body" name="body"
-                                                  class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
-                                              <?= $note['body'] ?>
-                                        </textarea>
-
+                    <textarea id="body" name="body" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"><?= $note['body'] ?></textarea>
                     </div>
-                    <div>
-                        <label for="users_id" class="block text-sm/6 font-medium text-white">Enter Your ID</label>
-                        <input type="number" id="users_id" name="users_id"
-                               class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
-                    </div>
-
                 </div>
+                <input type="hidden" name="_method" value="PATCH">
+                <input type="hidden" name="id" value="<?php echo $note['id'] ?>">
+
                 <div class="mt-6 flex items-center justify-end gap-x-6">
 
-                    <a href="/notes"
-                            class="rounded-md bg-gray-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        cancel
-                    </a>
+                    <a href="/notes" class="rounded-md bg-gray-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">cancel</a>
 
-                    <button type="submit"
-                            class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                        Save
-                    </button>
+                    <button type="submit" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</button>
 
                 </div>
 
