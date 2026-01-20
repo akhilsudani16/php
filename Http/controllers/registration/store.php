@@ -12,6 +12,10 @@ $password = $_POST['password'];
 
 $errors = [];
 
+    if(! Validator::string($name, 2, 50 )){
+        $errors['name'] = "Enter your full name";
+    }
+
     if(! Validator::email($email) ){
         $errors['email'] = 'Please enter a valid email address';
     }
