@@ -9,26 +9,29 @@
 
                 <form method="POST" action="/notes">
                             <div class="col-span-full">
+
+<!--                                <div>-->
+<!--                                    <label for="user_id" class="block text-sm/6 font-medium text-white">Enter Your ID</label>-->
+<!--                                    <input type="number" id="user_id" name="user_id"-->
+<!--                                           class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">-->
+<!--                                </div>-->
+
+                                <div>
+                                    <label for="title" class="block text-sm/6 font-medium text-white">title</label>
+                                    <input type="text" id="title" name="title"
+                                           class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
+                                </div>
+
+
                                     <label for="body" class="block text-sm/6 font-medium text-white">Body</label>
                                     <div class="mt-2">
                                         <textarea id="body" name="body"
-                                                  class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
-                                              <?= isset($_POST['body']) ? $_POST['body'] : ''; ?>
-                                        </textarea>
-
+                                                  class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"><?= isset($_POST['body']) ? $_POST['body'] : ''; ?></textarea>
                                         <?php if (isset($errors['body'])) : ?>
                                        <p class="text-white mt-5 mb-5 text-sm"> <?= $errors['body']; ?> </p>
                                         <?php endif; ?>
 
-
                                     </div>
-
-                                    <div>
-                                        <label for="users_id" class="block text-sm/6 font-medium text-white">Enter Your ID</label>
-                                        <input type="number" id="users_id" name="users_id"
-                                               class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
-                                    </div>
-
                                 </div>
                     <div class="mt-6 flex items-center justify-end gap-x-6">
 

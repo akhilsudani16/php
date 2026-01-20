@@ -6,6 +6,7 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -35,7 +36,8 @@ $errors = [];
     }
     else {
 
-        $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+        $db->query('INSERT INTO users(name, email, password, create_at) VALUES(:name, :email, :password, NOW())', [
+            'name' => $name,
             'email' => $email,
             'password' => password_hash($password, PASSWORD_BCRYPT)
         ]);

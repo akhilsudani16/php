@@ -1,7 +1,8 @@
 {
     "name": "revaticsdevelopment/demo",
     "require": {
-        "illuminate/collections": "^12.46"
+        "illuminate/collections": "^12.46",
+      "ext-pdo": "*"
     },
     "autoload": {
         "psr-4": {

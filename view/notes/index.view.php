@@ -14,7 +14,7 @@
             <li>
                 <a href="/note?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
 
-                <?= HTMLSPECIALCHARS($note['body']); ?>
+                <?= HTMLSPECIALCHARS($note['title']); ?>
 
                 </a>
             </li>

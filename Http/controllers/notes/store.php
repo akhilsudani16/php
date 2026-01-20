@@ -1,6 +1,7 @@
 <?php
 
 use Core\App;
+use Core\Middleware\Auth;
 use Core\Validator;
 use Core\Database;
 
@@ -20,9 +21,10 @@ if (! empty($errors)) {
     ]);
 }
 
-$db->query('INSERT INTO notes(body, users_id) VALUES(:body, :users_id)', [
+$db->query('INSERT INTO notes( user_id, title, body, create_at, updated_at) VALUES(:user_id, :title, :body, NOW(), NOW() )', [
+    'user_id' => 1,
+    'title' => $_POST['title'],
     'body' => $_POST['body'],
-    'users_id' => 3
 ]);
 
 header('location: /notes');
