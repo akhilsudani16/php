@@ -35,7 +35,9 @@ $errors = [];
     ])->find();
 
     if ($user){
-        header('Location: /');
+        return view('registration/create.view.php', [
+            'errors' => ['email' => 'This email is already registered']
+        ]);
         exit();
     }
     else {

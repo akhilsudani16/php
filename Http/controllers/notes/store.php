@@ -11,6 +11,10 @@ $errors = [];
 
 $currentUserId = Session::get('user')['id'];
 
+if(! Validator::string($_POST['title'],1, 50)){
+    $errors['title'] = 'Title is required';
+}
+
 if (!Validator::string($_POST['body'], 1, 1000)) {
     $errors['body'] = 'A body of no more than 1,000 characters is required.';
 }

@@ -20,4 +20,4 @@ it('validate that a number is grater then a given number', function () {
     expect(Validator::greaterThan(10, 1))->toBeTrue();
     expect(Validator::greaterThan(10, 100))->toBeFalse();
 
-})->only();
+});

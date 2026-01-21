@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="_method" value="PATCH">
-                <input type="hidden" name="id" value="<?php echo $note['id'] ?>">
+                <input type="hidden" name="id" value="<?php echo htmlspecialchars($note['id']) ?>">
 
                 <div class="mt-6 flex items-center justify-end gap-x-6">
 
