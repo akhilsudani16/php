@@ -13,7 +13,7 @@ $note = $db->query(
     [
         'id' => $_POST['id']
     ]
-)->findOrFail();
+)->findOrFails();
 
 authorize($note['user_id'] === $currentUserId);
 

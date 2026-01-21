@@ -23,8 +23,9 @@ if (!empty($errors)) {
 }
 
 $db->query(
-    'INSERT INTO notes (body, user_id) VALUES (:body, :user_id)',
+    'INSERT INTO notes (title, body, user_id, create_at, updated_at) VALUES (:title, :body, :user_id, NOW(), NOW())',
     [
+        'title' => $_POST['title'],
         'body'    => $_POST['body'],
         'user_id' => $currentUserId
     ]

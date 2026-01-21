@@ -2,7 +2,7 @@
 
 use Core\Container;
 
-test('it resolve something out of container', function () {
+test('work' , function (){
 
     $container = new Container();
 
@@ -10,6 +10,6 @@ test('it resolve something out of container', function () {
 
     $result = $container->resolve('foo');
 
-    expect($result)->toBe('bar');
+        expect($result)->toEqual('bar');
 
 });
