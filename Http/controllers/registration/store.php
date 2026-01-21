@@ -1,8 +1,10 @@
 <?php
 
 use Core\App;
+use Core\Authenticator;
 use Core\Database;
 use Core\Validator;
+use Http\Forms\LoginForm;
 
 $db = App::resolve(Database::class);
 
@@ -41,15 +43,31 @@ $errors = [];
         exit();
     }
     else {
-
         $db->query('INSERT INTO users(name, email, password, create_at) VALUES(:name, :email, :password, NOW())', [
             'name' => $name,
             'email' => $email,
             'password' => password_hash($password, PASSWORD_BCRYPT)
         ]);
 
-        login($user);
+        $newUser = LoginForm::validate($attributes = [
+            'email' => $_POST['email'],
+            'password' => $_POST['password']
+        ]);
 
-        header('Location: /');
-        exit();
+
+        $signedIn = (new Authenticator)->attempt
+        ($attributes['email'], $attributes['password']);
+
+        redirect('/');
     }
+
+
+//
+//        if (!$signedIn) {
+//            $form->error(
+//                'email', 'No Matching Account Found For That E-mail Address and password'
+//            )->throw();
+//        } else {
+//            redirect('/');
+//
+//        }

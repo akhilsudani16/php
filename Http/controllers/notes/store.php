@@ -29,12 +29,10 @@ if (!empty($errors)) {
 $db->query(
     'INSERT INTO notes (title, body, user_id, create_at, updated_at) VALUES (:title, :body, :user_id, NOW(), NOW())',
     [
-        ':title' => $_POST['title'],
-        ':body'    => $_POST['body'],
-        ':user_id' => $currentUserId
+        'title' => $_POST['title'],
+        'body'    => $_POST['body'],
+        'user_id' => $currentUserId
     ]
 );
-
-$_SESSION['user_id'] = $db->lastInsertId();
 
 redirect('/notes');

@@ -11,7 +11,7 @@ $currentUserId = Session::get('user')['id'];
 $notes = $db->query(
     'SELECT * FROM notes WHERE user_id = :user_id',
     [
-        ':user_id' => $currentUserId
+        'user_id' => $currentUserId
     ]
 )->get();
 

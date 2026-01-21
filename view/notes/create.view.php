@@ -46,7 +46,3 @@
     </div>
 
 <?php require base_path("view/partials/footer.php") ?>
-
-
-
-̉̉

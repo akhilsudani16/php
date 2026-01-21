@@ -35,8 +35,8 @@ if (!empty($errors)) {
 $db->query(
     'UPDATE notes SET body = :body WHERE id = :id',
     [
-        ':id'   => $_POST['id'],
-        ':body' => $_POST['body']
+        'id'   => $_POST['id'],
+        'body' => $_POST['body']
     ]
 );
 
