@@ -43,7 +43,9 @@
                     <?php endif; ?>
                 </div>
             </div>
-
+            <?php if (isset($errors['emailexits'])) : ?>
+                <p class="text-white mt-5 mb-5 text-sm"> <?= $errors['emailexits']; ?> </p>
+            <?php endif; ?>
             <div>
                 <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Register Now</button>
             </div>

@@ -36,7 +36,7 @@ $errors = [];
 
     if ($user){
         return view('registration/create.view.php', [
-            'errors' => ['email' => 'This email is already registered']
+            'errors' => ['emailexits' => 'This email is already registered']
         ]);
         exit();
     }
